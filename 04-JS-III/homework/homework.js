@@ -178,7 +178,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   let nro = n.toString();
-  if (nro[0] == '9') {
+  if (nro[0] === '9') {
     return true;
   }
   return false;
@@ -260,11 +260,17 @@ function breakStatement(numero) {
     arreglo[i] = numero;
 
     if (arreglo[i] === (i + 1)) {
+      // puedo guardar el mensaje en una variable y usar break
+
       return "Se interrumpió la ejecución";
     }
     
   }
 
+  // el break me traeria aca pero deberia usar otro condicional
+  // para ver si el mensaje esta guardado y enviarlo en lugar de
+  // devolver el arreglo, me parece mas correcto usar return para
+  // interrumpir el ciclo. 
   return arreglo;
 
 
@@ -278,6 +284,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var arregloNumeros = [];
+
+  for (let i = 0; i < 10; i++) {
+    if (i === 4) {
+      continue;
+    }
+    numero += 2;
+    arregloNumeros.push(numero);  
+  }
+
+  return arregloNumeros;
 }
 
 
